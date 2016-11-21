@@ -1,0 +1,14 @@
+{
+  "name": "smartsearch",
+  "version": "1.0.0",
+  "description": "Smart numeric searcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark K Cowan",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "filesize": "^3.3.0"
+  }
+}
