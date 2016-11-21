@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Demo for smartsearch",
+  "main": "websocket-max-payload-size.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark K Cowan",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "manakin": "^0.4.6",
+    "ws": "^1.1.1"
+  }
+}
