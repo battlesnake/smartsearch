@@ -23,6 +23,9 @@ function testSize(bufSize) {
 
 	const port = 32185;
 
+	/* true/false && ... to enable/disable verbose logging */
+	const verbose = str => false && console.info(str);
+
 	const fs = require('fs');
 	const http = require('http');
 
@@ -37,6 +40,7 @@ function testSize(bufSize) {
 		}
 	};
 
+	/* Buffer of given size, filled with pseudorandom data */
 	const makeBuf = size => {
 		const BS = 1 << 16;
 		const buf = Buffer.alloc(size);
@@ -52,11 +56,7 @@ function testSize(bufSize) {
 		return buf;
 	};
 
-	const buf = makeBuf(bufSize);
-
 	httpServer.listen(port);
-
-	const verbose = str => false && console.info(str);
 
 	httpServer.on('listening', () => {
 		verbose('Server started');
@@ -65,6 +65,7 @@ function testSize(bufSize) {
 
 		client.on('open', () => {
 			verbose('Client: Connection opened');
+			const buf = makeBuf(bufSize);
 			client.send(buf);
 		});
 
